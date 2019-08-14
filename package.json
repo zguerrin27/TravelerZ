@@ -4,8 +4,16 @@
   "description": "An application to help like minded travelers explore the world",
   "main": "src/server.js",
   "scripts": {
-    "test": "export NODE_ENV=test&& jasmine"
+    "test": "export NODE_ENV=test&& jasmine",
+    "start": "node src/server.js"
   },
   "author": "Zach Guerrin",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^3.4.0",
+    "request": "^2.88.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
