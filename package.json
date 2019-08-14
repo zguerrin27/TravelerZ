@@ -1,0 +1,11 @@
+{
+  "name": "travelerz",
+  "version": "1.0.0",
+  "description": "An application to help like minded travelers explore the world",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "export NODE_ENV=test&& jasmine"
+  },
+  "author": "Zach Guerrin",
+  "license": "ISC"
+}
