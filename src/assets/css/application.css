@@ -1,0 +1,26 @@
+body {
+  padding-top: 10px;
+  background-color: lightgrey;
+}
+
+.landing-header  {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 65px;
+}
+
+.landing-enter {
+  text-align: center;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 35px;
+}
+
+.landingImg {
+  height: 100vh;
+  width: 100vw;
+}
+
+.landing-container {
+  text-align: center;
+}
