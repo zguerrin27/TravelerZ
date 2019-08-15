@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../static/partials/head.ejs %>
+  </head>
+  <body>
+    <main class="container">
+      <% include ../static/partials/navbar.ejs %>
+
+      <h1>Trips</h1>
+
+      <ul class="list-group">
+        <% trips.forEach((trip) => { %>
+          <li class="list-group-item">
+            <a href="/trips/<%= trip.id %>"> <%= trip.title %> </a>
+          </li>
+        <% }) %>
+      </ul>
+
+    </main>
+  </body>
+</html>

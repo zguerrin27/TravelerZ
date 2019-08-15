@@ -2,32 +2,25 @@
 <html lang="en">
   <head>
     <% include ./partials/head.ejs %>
-  </head>
   <body>
-
-      <!-- Navigation -->
-      <% include ./partials/navbar.ejs %>
 
       <!-- Page Content -->
       <main class="container">
 
-        <!-- Jumbotron Header -->
-        <header class="jumbotron my-4">
-          <h1 class="display-3">Welcome to TravelerZ index</h1>
-          <p class="lead">An application for users to share information.</p>
-          <a href="#" class="btn btn-primary btn-lg">Sign up</a>
-        </header>
-
-        <!-- Page Features -->
-        <section class="row text-center">
+      <div class="landing-container">
+          <h1 class="landing-header">Welcome to TravelerZ </h1>
+          <a href="/trips" class="landing-enter" >ENTER</a>
+      </div>
+        
 
 
-        </section>
-        <!-- /.row -->
+      <img src="/img/TravelerZ-landing.png" class="img-fluid landingImg" alt="image" href="/trips">
+      
 
       </main>
       <!-- /.container -->
 
+      
       <% include ./partials/baseScripts.ejs %>
     </body>
 </html>
