@@ -1,9 +1,11 @@
 body {
   padding-top: 65px;
+  background-color: white;
 }
 
 .landing-header  {
   text-align: center;
+  color: black;
   font-family: 'Montserrat', sans-serif;
   font-size: 65px;
 }
