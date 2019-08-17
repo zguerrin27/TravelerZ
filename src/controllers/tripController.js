@@ -43,9 +43,10 @@ module.exports = {
   destroy(req, res, next){
     tripQueries.deleteTrip(req.params.id, (err, trip) => {
       if(err){
+        console.log("EERRROR FROM DESTROY ROUTE IN CONTROLLER")
         res.redirect(500, `/trips/${trip.id}`)
       } else {
-        res.redirect(303, "/trip")
+        res.redirect(303, "/trips")
       }
     });
   },
