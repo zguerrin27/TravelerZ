@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../static/partials/head.ejs %>
+  </head>
+  <body>
+    <% include ../static/partials/navbar.ejs %>
+
+    <main class="container">
+      <h1><%= trip.title %></h1>
+
+      <p><%= trip.description %></p>
+
+      <a href="/trips/<%= trip.id %>/edit" class="btn btn-warning">Edit Trip</a>
+
+      <form style="display:initial" action="/trips/<%= trip.id %>/destroy" method="post">
+        <button type="submit" class="btn btn-danger">Delete Trip</button>
+      </form>
+    </main>
+
+    <% include ../static/partials/baseScripts.ejs %>
+
+  </body>
+</html>
