@@ -13,9 +13,20 @@ module.exports = {
     };
     commentQueries.addComment(newComment, (err, comment) => {
       if(err){
+        console.log(err)
         res.redirect(500, "/comments/new");
       } else {
-        res.redirect(303, `/trips/${newComment.tripId}/comments/${comment.id}`);
+        res.redirect(303, `/trips/${newComment.tripId}`);
+      }
+    });
+  },
+
+  destroy(req, res, next){
+    commentQueries.deleteComment(req.params.id, (err, deletedRecordsCount) => {
+      if(err){
+        res.redirect(500, `/trips/${req.params.tripId}/comments/${req.params.id}`)
+      } else {
+        res.redirect(303, `/trips/${req.params.tripId}`)
       }
     });
   }

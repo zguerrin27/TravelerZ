@@ -11,5 +11,18 @@ module.exports = {
     .catch((err) => {
       callback(err);
     })
+  },
+
+  deleteComment(id, callback){
+    return Comment.destroy({
+      where: { id }
+    })
+    .then((deletedRecordsCount) => {
+      callback(null, deletedRecordsCount);
+    })
+    .catch((err) => {
+      callback(err);
+    })
   }
+  
 }

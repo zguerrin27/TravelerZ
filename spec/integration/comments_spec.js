@@ -43,7 +43,7 @@ describe("routes : comments", () => {
     it("should render a new comment form", (done) => {
       request.get(`${base}/${this.trip.id}/comments/new`, (err, res, body) => {
         expect(err).toBeNull();
-        console.log(body)
+        console.log(err)
         expect(body).toContain("New Comment");
         done();
       });
@@ -62,7 +62,6 @@ describe("routes : comments", () => {
        };
        request.post(options,
          (err, res, body) => {
- 
            Comment.findOne({where: {body: "I love skiing!!!! Maybe I should plan a trip to the Alpes!"}})
            .then((comment) => {
              expect(comment).not.toBeNull();
@@ -78,6 +77,24 @@ describe("routes : comments", () => {
        );
      });
  
+  });
+
+  describe("POST /trips/:tripId/comments/:id/destroy", () => {
+
+    it("should delete the comment with the associated ID", (done) => {
+      expect(comment.id).toBe(1);
+
+      request.post(`${base}/${this.trip.id}/comments/${this.comment.id}/destroy`, (err, res, body) => {
+        Comment.findByPk(1)
+        .then((comment) => {
+          expect(err).toBeNull();
+          expect(comment).toBeNull();
+          done();
+        })
+      });
+
+    });
+
   });
 
 
