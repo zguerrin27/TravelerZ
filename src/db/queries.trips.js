@@ -1,4 +1,5 @@
 const Trip = require("./models").Trip;
+const Comment = require("./models").Comment;
 
 module.exports = {
 
@@ -26,7 +27,12 @@ module.exports = {
   },
 
   getTrip(id, callback){
-    return Trip.findByPk(id)
+    return Trip.findByPk(id, {
+      include: [{
+        model: Comment,
+        as: "comments"
+      }]
+    })
     .then((trip) => {
       callback(null, trip);
     })

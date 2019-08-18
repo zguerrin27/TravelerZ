@@ -11,6 +11,22 @@
 
       <p><%= trip.description %></p>
 
+      <br>
+
+      <h1>Comments</h1>
+
+      <ul class="list-group">
+        <% trip.comments.forEach((comment) => { %>
+          <li class="list-group-item">
+            <a href="/trips/<%= trip.id %>/comments/<%= comment.id %>"> <%= comment.body %> </a>
+          </li>
+        <% }) %>
+      </ul>
+
+      <a href="/trips/<%= trip.id %>/comments/new" class="btn btn-success">New Comment</a>
+
+      <hr>
+
       <a href="/trips/<%= trip.id %>/edit" class="btn btn-warning">Edit Trip</a>
 
       <form style="display:initial" action="/trips/<%= trip.id %>/destroy" method="post">

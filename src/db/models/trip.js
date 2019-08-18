@@ -1,11 +1,20 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Trip = sequelize.define('Trip', {
-    title: DataTypes.STRING,
-    description: DataTypes.STRING
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   }, {});
   Trip.associate = function(models) {
-    // associations can be defined here
+    Trip.hasMany(models.Comment, {
+      foreignKey: "tripId",
+      as: "comments"
+    });
   };
   return Trip;
 };
