@@ -13,10 +13,9 @@
 
       <br>
 
-      <h1>Comments - <a href="/trips/<%= trip.id %>/comments/new" class="btn btn-success">New Comment</a></h1>
+      <h1>Comments - <a href="/trips/<%= trip.id %>/comments/new" class="btn btn-success btn-sm">New Comment</a></h1>
 
-      
-
+    
       <hr>
 
       <ul class="list-group">
@@ -25,7 +24,7 @@
             <!-- <a href="/trips/<%= trip.id %>/comments/<%= comment.id %>"> <%= comment.body %> </a> -->
             <h6><%= comment.body %></h6>
             <form style="display:initial" action="/trips/<%= comment.tripId %>/comments/<%= comment.id %>/destroy" method="post">
-              <button type="submit" class="btn btn-danger">Delete Comment</button>
+              <button type="submit" class="btn btn-danger btn-sm">Delete Comment</button>
             </form>
           </li>
         <% }) %>

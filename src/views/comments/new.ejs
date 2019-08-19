@@ -7,12 +7,15 @@
     <% include ../static/partials/navbar.ejs %>
 
     <main class="container">
+      <% include ../static/partials/messages.ejs %>
+
       <h1>New Comment</h1>
 
       <form action="/trips/<%= tripId %>/comments/create" method="post">
         <div class="form-group">
           <label for="body">Comment:</label>
           <textarea rows="4" class="form-control" name="body" placeholder="Enter Comment"></textarea>
+          <small class="text-muted" id="bodyHelp">body must be 10 or more characters in length.</small>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

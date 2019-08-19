@@ -76,13 +76,36 @@ describe("routes : comments", () => {
          }
        );
      });
+
+     it("should not create a new post that fails validations", (done) => {
+      const options = {
+        url: `${base}/${this.trip.id}/comments/create`,
+        form: {
+          body: "b"
+        }
+      };
+
+      request.post(options,
+        (err, res, body) => {
+          Comment.findOne({where: {body: "b"}})
+          .then((comment) => {
+              expect(comment).toBeNull();
+              done();
+          })
+          .catch((err) => {
+            console.log(err);
+            done();
+          });
+        }
+      );
+    });
  
   });
 
   describe("POST /trips/:tripId/comments/:id/destroy", () => {
 
     it("should delete the comment with the associated ID", (done) => {
-      expect(comment.id).toBe(1);
+      expect(this.comment.id).toBe(1);
 
       request.post(`${base}/${this.trip.id}/comments/${this.comment.id}/destroy`, (err, res, body) => {
         Comment.findByPk(1)
